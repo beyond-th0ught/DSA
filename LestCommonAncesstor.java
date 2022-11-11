@@ -6,6 +6,8 @@ Node LCA(Node root, int n1, n2){
     Node left = LCA(node.left, n1, n2);
     Node right = LCA(node.right, n1, n2);
     
+    if(left !=null && right != null) return node;
+    
     if(left != null) return left;
     if(right != null) return right;
     
