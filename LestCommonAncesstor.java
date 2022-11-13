@@ -1,16 +1,13 @@
 Node LCA(Node root, int n1, n2){
     if(root == null) return null;
+    if(root.data == n1 || root.data == n2) return root;
     
-    if(root.data == n1 || root.data == n2) return node;
+    Node left = LCA(root.left, n1, n2);
+    Node right = LCA(root.right, n1, n2);
     
-    Node left = LCA(node.left, n1, n2);
-    Node right = LCA(node.right, n1, n2);
-    
-    if(left !=null && right != null) return node;
-    
+    if(left != null && right != null) return root;
     if(left != null) return left;
     if(right != null) return right;
-    
     return null;
 }
 
